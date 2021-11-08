@@ -14,7 +14,7 @@ from sys import argv
 import requests
 
 #YOUR WEBHOOK_URL HERE
-WEBHOOK_URL = 'https://discord.com/api/webhooks/905544564130074674/jdm9eVR9AiO8gyZsW7w2fgS9Tv-QdACIceq_Rvh9XgYleoPp6j2rp2FMvYw-aAvdjWML'
+WEBHOOK_URL = 'HERE'
 
 
 
